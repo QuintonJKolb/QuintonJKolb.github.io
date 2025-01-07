@@ -6,34 +6,38 @@ body, ul {
 
 /* Menu bar styling */
 .menu-bar {
-    background-color: #333;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    background-color: #333; /* Dark background */
+    overflow: hidden;      /* Clear floats if any */
+    display: flex;         /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center items if needed */
+    width: 100%;           /* Stretch across the page */
+    position: fixed;       /* Stays at the top even when scrolling */
+    top: 0;
+    z-index: 1000;
 }
 
 .menu-bar ul {
-    list-style: none;
-    display: flex;
+    list-style: none;      /* Remove bullet points */
+    display: flex;         /* Arrange list items horizontally */
     margin: 0;
     padding: 0;
 }
 
 .menu-bar li {
-    padding: 0;
-    margin: 0;
+    flex-grow: 1;          /* Make items evenly spaced */
+    text-align: center;    /* Center align text inside each menu item */
 }
 
 .menu-bar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    font-size: 16px;
+    display: block;        /* Makes the link cover the entire list item */
+    color: white;          /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 14px 20px;    /* Add padding for better spacing */
+    font-size: 16px;       /* Set font size */
     transition: background-color 0.3s ease;
 }
 
 .menu-bar a:hover {
-    background-color: #575757;
-    color: #fff;
+    background-color: #575757; /* Highlight on hover */
+    color: #fff;              /* Keep text white on hover */
 }
