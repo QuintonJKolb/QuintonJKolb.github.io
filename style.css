@@ -1,43 +1,67 @@
-/* Reset basic styles */
-body, ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Menu bar styling */
+/* Basic Menu Styling */
 .menu-bar {
-    background-color: #333; /* Dark background */
-    overflow: hidden;      /* Clear floats if any */
-    display: flex;         /* Flexbox for horizontal alignment */
-    justify-content: center; /* Center items if needed */
-    width: 100%;           /* Stretch across the page */
-    position: fixed;       /* Stays at the top even when scrolling */
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
 
 .menu-bar ul {
-    list-style: none;      /* Remove bullet points */
-    display: flex;         /* Arrange list items horizontally */
+    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .menu-bar li {
-    flex-grow: 1;          /* Make items evenly spaced */
-    text-align: center;    /* Center align text inside each menu item */
+    position: relative; /* Required for dropdown positioning */
+    flex-grow: 1;
+    text-align: center;
 }
 
 .menu-bar a {
-    display: block;        /* Makes the link cover the entire list item */
-    color: white;          /* White text color */
-    text-decoration: none; /* Remove underline */
-    padding: 14px 20px;    /* Add padding for better spacing */
-    font-size: 16px;       /* Set font size */
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .menu-bar a:hover {
-    background-color: #575757; /* Highlight on hover */
-    color: #fff;              /* Keep text white on hover */
+    background-color: #575757;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position it below the parent menu item */
+    left: 0;
+    background-color: #444; /* Different background for the dropdown */
+    min-width: 200px; /* Optional: set a minimum width */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    z-index: 1000;
+}
+
+.dropdown li {
+    text-align: left; /* Align dropdown items to the left */
+}
+
+.dropdown a {
+    padding: 10px 20px; /* Adjust padding for dropdown links */
+    color: white;
+}
+
+.dropdown a:hover {
+    background-color: #575757; /* Highlight dropdown items on hover */
+}
+
+/* Show Dropdown on Hover */
+.menu-bar li:hover .dropdown {
+    display: block; /* Make dropdown visible when hovering over parent */
 }
